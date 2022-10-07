@@ -1,18 +1,21 @@
 // No cambies los nombres de las funciones.
 
+const { get } = require("@11ty/eleventy/src/TemplateCache");
+const { agregarSimboloExclamacion } = require("../../02-JS-I/homework/homework");
+
 function obtenerMayor(x, y) {
   // "x" e "y" son números enteros (int).
   // Devuelve el número más grande
   // Si son iguales, devuelve cualquiera de los dos
   // Tu código:
-  if(x>y){
-    return x;
-  }
-  else if(x<y){
+  if(x===y){
     return y;
   }
+  else if(x>y){
+    return x;
+  }
   else{
-    return Math.random(x,y);
+    return y;
   }
   }
 
@@ -20,11 +23,11 @@ function mayoriaDeEdad(edad) {
   //Determinar si la persona según su edad puede ingresar a un evento.
   //Si tiene 18 años ó más, devolver --> "Allowed"
   //Si es menor, devolver --> "Not allowed"
-  if(edad=>18){
-    return "Allowed";
+  if(edad<=17){
+    return "Not allowed";
   }
   else{
-    return "Not allowed";
+    return "Allowed";
   }
 }
   
@@ -52,6 +55,18 @@ function saludo(idioma) {
   // Si "idioma" es "ingles", devuelve "Hello!"
   // Si "idioma" no es ninguno de los anteiores o es `undefined` devuelve "Hola!"
   // Tu código:
+  if(idioma!=="aleman"&&idioma!=="mandarin"&&idioma!=="ingles"){
+    return "Hola!";
+  }
+  else if(idioma==="aleman"){
+    return "Guten Tag!";
+  }
+  else if(idioma==="mandarin"){
+    return "Ni Hao!";
+  }
+  else{
+    return "Hello!"
+  }
 }
 
 function colors(color) {
